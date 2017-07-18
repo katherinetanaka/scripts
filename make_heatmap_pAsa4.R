@@ -3,6 +3,16 @@
 *########################################################
 library(ggplot2)
 
+#### Attribution ####
+# This script is part of the following publication:
+# Tanaka KH, Vincent AT, Trudel MV, Paquet VE, Frenette M, Charette SJ:
+# The mosaic architecture of Aeromonas salmonicida subsp. salmonicida
+# pAsa4 plasmid and its consequences on antibiotic resistance.
+# PeerJ. 2016;4:e2595.
+
+# and is reproduced according to its Creative Commons Licence
+# https://creativecommons.org/licenses/by/4.0/
+
 # Note from creator:
 #  CDS were batch-submitted to NCBI website for tBlastn analysis using 
 #  nr/nt database, resulting in multiple csv files. Files were merged by hand
