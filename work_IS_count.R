@@ -1,8 +1,9 @@
 # November 21st, 2016
 # Partial vs complete ISs in 01-B526
+# Used command lastal -f TAB db FILE > output
 
 setwd("~/Desktop/IS_count_01-B526/")
-tabRaw <- read.table("all_vs_IS.tab", header=FALSE, stringsAsFactors=FALSE)
+tabRaw <- read.table("all_vs_IS.tab", stringsAsFactors=FALSE)
 names(tabRaw) <- c("score", "db", "startDB", "alignedDB", "strandDB", "lengthDB",
                    "query", "startQ", "alignedQ", "strandQ", "lengthQ",
                    "string", "EG", "Evalue")
