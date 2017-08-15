@@ -27,7 +27,7 @@ TPvector <- ifelse(tabRaw$percent > 0.9, "complete", "partial")
 tabRaw$TP <- factor(TPvector)
 
 TotalPartial <- (tabRaw$factdb, tabRaw$TP)
-# Ngggg
+
 
 Distri <- tapply(tabRaw$percent, INDEX = tabRaw$factdb, FUN = summary)
 
@@ -40,15 +40,16 @@ tabNotRaw <- tabRaw[tabRaw$db %in% c('ISAS10-CP000646_7', 'ISAS11-pAsal1',
                                      'ISAS4-ISAs32', 'ISAS5-CP000646_10', 
                                      'ISAS6', 'ISAS8'), ]
 sorted526 <- tabRaw[order(tabRaw[,2], tabRaw[,7], tabRaw[,8]), ]
-write.csv(sorted526, file = "sorted526.csv")
-# Visualisation
+write.csv(sorted526, file = "sorted522.csv")
+
+# Visualise
 library(ggplot2)
 library(RColorBrewer)
 
 a <- ggplot(tabNotRaw, aes(x = percent))
 a + geom_density() + facet_grid(factdb ~ .)
 
-### 13 juillet 2017: plus de visualisation
+### 13 juillet 2017 more visualisation
 b <- ggplot(tabNotRaw, aes(x = percent, fill = factdb))
 b + geom_histogram(bins = 20) +
   scale_fill_brewer(palette = "Paired", labels = c("ISAS10", "ISAS11", "ISAs19", "ISAs21", "ISAS3", "ISAS6", "ISAs34",
@@ -80,8 +81,6 @@ TotalPartial <- data.frame(IS = levels(factdb), complete = NA, partial = NA)
 TPvector <- ifelse(tabRaw449$percent > 0.9, "complete", "partial")
 tabRaw449$TP <- factor(TPvector)
 
-# Ouin, mon premier graphique était pas mal, mais il faut peut-être enlever le
-# bruit (en ne gardant que les IS pour lesquelles 1 complète)
 
 tabNotRaw449 <- tabRaw449[tabRaw449$db %in% c("ISAS1", "ISAS10-CP000646_7",
                                               "ISAS11-pAsal1", "ISAs19",
@@ -98,7 +97,7 @@ library(RColorBrewer)
 a <- ggplot(tabNotRaw, aes(x = percent))
 a + geom_density() + facet_grid(factdb ~ .)
 
-### 13 juillet 2017: plus de visualisation
+### 13 juillet 2017
 b <- ggplot(tabNotRaw, aes(x = percent, fill = factdb))
 b + geom_histogram(bins = 20) +
   scale_fill_brewer(palette = "Paired", labels = c("ISAS10", "ISAS11", "ISAs19", "ISAs21", "ISAS3", "ISAS6", "ISAs34",
